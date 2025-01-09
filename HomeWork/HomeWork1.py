@@ -1,10 +1,10 @@
 class Hero:
     # Магический метод
-    def __init__(self, name, lvl, HP):
+    def __init__(self, name, lvl, hp):
         # Атрибуты класса
         self.name = name
         self.lvl = int(lvl)
-        self.HP = int(HP)
+        self.HP = int(hp)
 
     def __str__(self):
         return f"Имя:{self.name} lvl:{self.lvl} HP:{self.HP}"

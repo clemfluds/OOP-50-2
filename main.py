@@ -1,12 +1,14 @@
 # OOP
 
 # First Class
-
-
+# FLAT - Плоская
+# SRC - Исходный
 
 class Person:
     # Магический метод
     def __init__(self, name, age, city):
+
+
         # Атрибуты класса
         self.name = name
         self.age = age
