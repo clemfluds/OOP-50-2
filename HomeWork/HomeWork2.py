@@ -42,7 +42,7 @@ class Archer(Hero):
         )
 
 
-archer = Archer("Joel", 100, 5, 80)
+Joel = Archer("Joel", 100, 5, 80)
 
 print(archer.status())
 print(archer.attack())
