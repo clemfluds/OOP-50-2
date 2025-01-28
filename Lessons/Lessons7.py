@@ -65,7 +65,6 @@ def update_user_by_rowid(name=None, age=None, hoby=None, rowid=None):
 
 # update_user_by_rowid(name="Вася", hoby="Гулять")
 
-
 def delte_user_by_rowid(rowid):
     cursor.execute(
         'DELETE FROM users WHERE rowid = ?',
@@ -77,20 +76,34 @@ def delte_user_by_rowid(rowid):
 
 # delte_user_by_rowid(2)
 
-
 def get_all_users():
     cursor.execute('SELECT * FROM users')
     users = cursor.fetchall()
-    print(f"-----{users}")
 
     if users:
         print("Список всех пользователей")
         for user in users:
-            print(f"Name: {user[0]}, AGE: {user[1]}, HOBBY: {user[2]}")
+            print(f"Name: {user[1]}, AGE: {user[2]}, HOBBY: {user[3]}")
     else:
         print(f"Список пользователей пуст")
 
 
-get_all_users()
+# get_all_users()
+
+def detail_view_user_by_id(user_id):
+    cursor.execute('SELECT * FROM users WHERE rowid = ?', (user_id,))
+    user = cursor.fetchone()
+
+    if user:
+        print(f"User ID: {user[0]}")  # Идентификатор пользователя
+        print(f"Name: {user[1]}")  # Имя пользователя
+        print(f"Age: {user[2]}")  # Возраст пользователя
+    else:
+        print(f"Пользователь с ID {user_id} не найден")
+
+
+# Пример использования:
+detail_view_user_by_id(2)
+
 
 db.close()
